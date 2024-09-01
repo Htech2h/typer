@@ -1,0 +1,23 @@
+
+<p class="timer-display">Your Time: {{ timer }} seconds</p>
+
+<div class="input-container">
+  <textarea (input)="startTimer()"  [(ngModel)]="answer" id="input-field" placeholder=" "  oninput="adjustHeight(this)" required
+            autocomplete="off" spellcheck="false"></textarea>
+  <label for="input-field" class="placeholder">{{render}}</label>
+</div>
+
+<!-- Popup Div -->
+<div *ngIf="showPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" (click)="closePopup()">&times;</span>
+    <p>Wpm {{ score }} </p>
+    <p>Number of words: {{wordNum}} in 30 seconds</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 type test(Htech2).All rights reserved.</p>
+  </div>
+</footer>
